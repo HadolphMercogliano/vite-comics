@@ -41,7 +41,7 @@ export default {
 };
 </script>
 <template>
-  <header class="">
+  <header class="container">
     <div class="logo">
       <img
         src="../assets/dc-logo.png"
@@ -56,6 +56,13 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use "../assets/styles/variables.scss" as *;
+@use "../assets/styles/mixins.scss" as *;
+.container {
+  @include d-flex();
+  justify-content: space-between;
+  align-items: center;
+}
 .nav {
   li {
     margin: 0 5px;

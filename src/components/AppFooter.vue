@@ -66,16 +66,17 @@ export default {};
           </div>
         </div>
         <div class="bg-logo">
-          <img
-            src="../assets/dc-logo-bg.png"
-            alt="" />
+          <div></div>
         </div>
       </div>
     </div>
+
     <div class="footer-bot">
       <div class="container">
-        <button class="btn-outline">SIGN-UP NOW!</button>
         <div>
+          <button class="btn-outline">SIGN-UP NOW!</button>
+        </div>
+        <div class="socials">
           <h3>FOLLOW US</h3>
           <ul>
             <li>
@@ -121,12 +122,23 @@ export default {};
 </template>
 
 <style lang="scss" scoped>
+@use "../assets/styles/variables.scss" as *;
+@use "../assets/styles/mixins.scss" as *;
 .footer-top {
   background-image: url(../assets/footer-bg.jpg);
+  .container {
+    @include d-flex();
+  }
   .footer-text {
-    padding: 10px 0;
+    @include d-flex();
+
+    width: 50%;
+
+    padding: 20px 0;
+    padding-bottom: 30px;
     div {
       margin-bottom: 10px;
+      margin-right: 20px;
     }
     h3 {
       color: white;
@@ -145,20 +157,39 @@ export default {};
   }
   .bg-logo {
     width: 50%;
+    // position: relative;
+    div {
+      height: 500px;
+      background-image: url(../assets/dc-logo-bg.png);
+    }
   }
 }
 .footer-bot {
-  background-color: #2f2f2f;
+  .container {
+    @include d-flex();
+    justify-content: space-between;
+    align-items: center;
+  }
+  background-color: $grey;
   padding: 20px;
   button {
+    display: inline;
     font-weight: 700;
     padding: 10px;
     color: white;
-    background-color: #2f2f2f;
-    border: 1px solid #0f82f7;
+    background-color: $grey;
+    border: 1px solid $blue;
   }
   h3 {
     color: #0f82f7;
+  }
+  .socials {
+    @include d-flex();
+    column-gap: 10px;
+    ul {
+      @include d-flex();
+      column-gap: 10px;
+    }
   }
 }
 </style>
