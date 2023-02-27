@@ -49,7 +49,11 @@ export default {
     </div>
     <div class="nav">
       <ul>
-        <li v-for="link in headerLinks">{{ link.title }}</li>
+        <li
+          :class="link.active ? 'active' : ''"
+          v-for="link in headerLinks">
+          <a href="#">{{ link.title }}</a>
+        </li>
       </ul>
     </div>
   </header>
@@ -63,14 +67,27 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
+.logo {
+  height: 100px;
+  img {
+    padding: 10px;
+    height: 100px;
+  }
+}
 .nav {
   li {
+    line-height: 100px;
     margin: 0 5px;
     display: inline-block;
     font-size: 0.8rem;
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
   }
 }
 .active {
-  border-bottom: 2px solid #0f82f7;
+  border-bottom: 2px solid $blue;
 }
 </style>
