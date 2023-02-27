@@ -36,7 +36,14 @@ export default {
           active: false,
         },
       ],
+      ActivePage: 0,
     };
+  },
+  methods: {
+    switchToPage(index) {
+      alert("hai cliccato il link n: " + index);
+      this.ActivePage = index;
+    },
   },
 };
 </script>
@@ -51,7 +58,8 @@ export default {
       <ul>
         <li
           :class="link.active ? 'active' : ''"
-          v-for="link in headerLinks">
+          v-for="(link, index) in headerLinks"
+          @click="switchToPage(index)">
           <a href="#">{{ link.title }}</a>
         </li>
       </ul>
@@ -70,7 +78,7 @@ export default {
 .logo {
   height: 100px;
   img {
-    padding: 10px;
+    padding: 10px 0;
     height: 100px;
   }
 }
@@ -88,6 +96,6 @@ export default {
   }
 }
 .active {
-  border-bottom: 2px solid $blue;
+  border-bottom: 4px solid $blue;
 }
 </style>
