@@ -4,6 +4,7 @@ export default {};
 
 <template>
   <footer>
+    <!--------------------- FOOTER TOP --------------------->
     <div class="footer-top">
       <div class="container">
         <div class="footer-text">
@@ -71,6 +72,7 @@ export default {};
       </div>
     </div>
 
+    <!--------------------- FOOTER BOTTOM --------------------->
     <div class="footer-bot">
       <div class="container">
         <div>
@@ -126,6 +128,7 @@ export default {};
 @use "../assets/styles/mixins.scss" as *;
 .footer-top {
   background-image: url(../assets/footer-bg.jpg);
+  background-repeat: no-repeat;
   .container {
     @include d-flex();
   }
@@ -157,10 +160,11 @@ export default {};
   }
   .bg-logo {
     width: 50%;
-    // position: relative;
     div {
-      height: 500px;
+      height: 100%;
       background-image: url(../assets/dc-logo-bg.png);
+      background-size: cover;
+      background-position: center;
     }
   }
 }
@@ -185,6 +189,7 @@ export default {};
   }
   .socials {
     @include d-flex();
+    align-items: center;
     column-gap: 10px;
     ul {
       @include d-flex();

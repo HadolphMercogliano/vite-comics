@@ -5,20 +5,24 @@ import MainContent from "./components/main/MainContent.vue";
 import AppFooter from "./components/AppFooter.vue";
 
 //import dataset
-import comics from "./data/comics";
+import comicsList from "./data/comics";
 
 export default {
-  data() {},
+  data() {
+    return {
+      comicsList,
+    };
+  },
 
   //dichiarazione
-  components: { AppHeader, AppFooter, MainContent, comics },
+  components: { AppHeader, AppFooter, MainContent },
 };
 </script>
 
 <template>
   <div>
     <AppHeader />
-    <MainContent />
+    <MainContent :comics="comicsList" />
     <AppFooter />
   </div>
 </template>
