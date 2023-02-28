@@ -6,28 +6,28 @@ export default {};
     <div class="container">
       <div class="card">
         <img
-          src="../assets/buy-comics-digital-comics.png"
+          src="../../assets/buy-comics-digital-comics.png"
           alt="" />
         <span>DIGITAL COMICS</span>
       </div>
 
       <div class="card">
         <img
-          src="../assets/buy-comics-merchandise.png"
+          src="../../assets/buy-comics-merchandise.png"
           alt="" />
         <span>DC MERCHANDISE</span>
       </div>
 
       <div class="card">
         <img
-          src="../assets/buy-comics-subscriptions.png"
+          src="../../assets/buy-comics-subscriptions.png"
           alt="" />
         <span>SUBSCRIPTION</span>
       </div>
 
       <div class="card">
         <img
-          src="../assets/buy-comics-shop-locator.png"
+          src="../../assets/buy-comics-shop-locator.png"
           alt="" />
         <span>COMIC SHOP LOCATOR</span>
       </div>
@@ -35,7 +35,7 @@ export default {};
       <div class="card">
         <img
           class="visa"
-          src="../assets/buy-dc-power-visa.svg"
+          src="../../assets/buy-dc-power-visa.svg"
           alt="" />
         <span>DC POWER VISA</span>
       </div>
@@ -44,15 +44,16 @@ export default {};
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/styles/variables.scss" as *;
-@use "../assets/styles/mixins.scss" as *;
+@use "../../assets/styles/mixins.scss" as *;
+@use "../../assets/styles/variables.scss" as *;
 
 .bg-blue {
   background-color: $blue;
+  padding: 20px 0;
 
   .container {
     @include d-flex();
-    column-gap: 10px;
+    // column-gap: 10px;
     justify-content: space-between;
 
     .card {
@@ -62,11 +63,12 @@ export default {};
       font-size: 0.7rem;
 
       img {
-        height: 40%;
+        width: 20%;
+
         margin-right: 10px;
       }
       .visa {
-        height: 30%;
+        width: 500%;
       }
     }
   }

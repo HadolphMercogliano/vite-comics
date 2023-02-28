@@ -1,17 +1,26 @@
 <script>
+//import components
 import AppHeader from "./components/AppHeader.vue";
+import MainContent from "./components/main/MainContent.vue";
 import AppFooter from "./components/AppFooter.vue";
-import MainFooter from "./components/MainFooter.vue";
+
+//import dataset
+import comics from "./data/comics";
 
 export default {
-  components: { AppHeader, AppFooter, MainFooter },
+  data() {},
+
+  //dichiarazione
+  components: { AppHeader, AppFooter, MainContent, comics },
 };
 </script>
 
 <template>
-  <AppHeader />
-  <MainFooter />
-  <AppFooter />
+  <div>
+    <AppHeader />
+    <MainContent />
+    <AppFooter />
+  </div>
 </template>
 
 <style lang="scss">
@@ -29,9 +38,9 @@ body {
 }
 
 .container {
-  width: 80%;
-  max-width: 1200;
-  min-width: 600px;
+  width: 1000px;
+  // max-width: 1200;
+  // min-width: 600px;
   margin: 0 auto;
 }
 img {
